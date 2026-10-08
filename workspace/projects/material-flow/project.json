@@ -1,0 +1,84 @@
+{
+  "id": "material-flow",
+  "name": "资料交付流程优化",
+  "summary": "虚构示例：让跨团队资料交付可追踪、可验收。",
+  "phase": "试行阶段",
+  "goal": "完成统一交付清单，并通过两次真实流程演练验证可用性。",
+  "scope": "覆盖资料请求、交付、接收确认和异常反馈；自动催办留待后续评估。",
+  "owner": "示例负责人（虚构）",
+  "updated_at": "2026-10-08T19:00:00+08:00",
+  "source_refs": [],
+  "milestones": [
+    {
+      "id": "M-001", "title": "交付清单在两次流程演练中可用", "status": "进行中",
+      "description": "先统一需要交付的材料及接收确认方式。",
+      "criteria": ["清单字段由参与方核对", "完成两次真实流程演练", "异常项有明确处理记录"],
+      "evidence_ids": ["E-001"]
+    },
+    {
+      "id": "M-002", "title": "评估是否需要自动提醒", "status": "后续",
+      "description": "在人工流程稳定且延迟问题可测量后决定是否启动。",
+      "criteria": ["记录延迟原因与频次", "比较提醒方案的投入与收益"],
+      "evidence_ids": []
+    }
+  ],
+  "items": [
+    {
+      "id": "I-001", "type": "issue", "title": "交付内容不一致", "status": "进行中",
+      "description": "参与方对必需材料的理解不同，接收时反复补件。",
+      "reason": "先统一清单，才能评估流程改善。",
+      "owner": "示例负责人（虚构）", "milestone_id": "M-001",
+      "depends_on": [], "evidence_ids": ["E-001"], "revisit_when": "完成首次流程演练",
+      "displaces": "", "updated_at": "2026-10-08T19:00:00+08:00"
+    },
+    {
+      "id": "I-002", "type": "task", "title": "拟定并核对统一交付清单", "status": "待验证",
+      "description": "草稿已经形成，尚未获得参与方确认。",
+      "reason": "支撑当前里程碑的首项验收条件。",
+      "owner": "示例负责人（虚构）", "milestone_id": "M-001",
+      "depends_on": ["I-001"], "evidence_ids": [], "revisit_when": "收到参与方反馈",
+      "displaces": "", "updated_at": "2026-10-08T19:00:00+08:00"
+    },
+    {
+      "id": "I-003", "type": "idea", "title": "交付超时自动提醒", "status": "后续",
+      "description": "想为超过约定时间的资料请求自动发送提醒。",
+      "reason": "需要先证明延迟是主要问题，且清单和责任边界已稳定。",
+      "owner": "未定", "milestone_id": "M-002",
+      "depends_on": ["I-002"], "evidence_ids": [], "revisit_when": "两次流程演练后核对延迟原因",
+      "displaces": "若提前启动将挤占当前清单验证", "updated_at": "2026-10-08T19:00:00+08:00"
+    },
+    {
+      "id": "I-004", "type": "risk", "title": "参与方反馈晚于演练安排", "status": "待澄清",
+      "description": "尚未确认各方是否能按时核对清单。",
+      "reason": "会影响首次演练准备。",
+      "owner": "示例负责人（虚构）", "milestone_id": "M-001",
+      "depends_on": [], "evidence_ids": [], "revisit_when": "确定演练日期与反馈负责人",
+      "displaces": "", "updated_at": "2026-10-08T19:00:00+08:00"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D-001", "title": "先验证人工交付清单",
+      "decision": "将自动提醒放在下一阶段，当前优先完成清单核对和流程演练。",
+      "reason": "责任边界和延迟基线尚未清楚，提前开发提醒会分散当前验证工作。",
+      "owner": "示例负责人（虚构）", "date": "2026-10-08",
+      "item_ids": ["I-002", "I-003"], "evidence_ids": ["E-001"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E-001", "title": "最初问题描述（示例）", "status": "已核实",
+      "kind": "原始文字", "path": "materials/initial-note.md", "url": "",
+      "observed_at": "2026-10-08T19:00:00+08:00",
+      "note": "仅证明提出了该问题，不证明改善已经发生。"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "O-001", "title": "减少交付时反复补件", "status": "待验证",
+      "expected": "交付双方能在提交前核对完整性。",
+      "baseline": "尚未采集补件次数", "observed": "", "method": "比较演练前后相近资料请求的补件次数",
+      "evidence_ids": [], "owner": "示例负责人（虚构）"
+    }
+  ]
+}

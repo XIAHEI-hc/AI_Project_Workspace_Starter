@@ -1,0 +1,47 @@
+# 事实来源，必须入库，不要忽略：
+#   workspace/projects/*/project.json  结构化事实记录
+#   workspace/projects/*/materials/    原始材料
+#   workspace/projects/*/changes.jsonl 变更轨迹
+#   agent/ skills/ scripts/ templates/ 工作区规则与工具
+
+# ── Python ───────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ── Node / 本地包缓存（工作区本身不需要 Node） ─────────────
+node_modules/
+.npm-cache/
+.pnpm-store/
+
+# ── 编辑器与 IDE ─────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── 操作系统 ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── 临时文件、备份与日志（都不是事实来源） ────────────────
+*.tmp
+*.temp
+*.bak
+*.bak-*
+*.orig
+*.rej
+*.log
+
+# ── 插件安装审查用的临时目录（非项目内容） ────────────────
+.plugin-review/
